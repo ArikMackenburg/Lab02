@@ -37,5 +37,25 @@ namespace Lab.Test
             decimal result = Program.Deposit(balance, deposit);
             Assert.Equal(result, expect);
         }
+        [Fact]
+        public void WithdrawTest2()
+        {
+            decimal balance = 20;
+            decimal withdraw = (-30);
+
+            bool result = Program.Withdraw(balance, withdraw) == 50;
+
+            Assert.False(result); 
+        }
+        [Fact]
+        public void DepositTest2()
+        {
+            decimal balance = 20;
+            decimal deposit = (-30);
+
+            bool result = Program.Withdraw(balance, deposit) == -10;
+
+            Assert.False(result);
+        }
     }
 }
