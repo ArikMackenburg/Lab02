@@ -11,13 +11,13 @@ namespace Lab
         static void Main(string[] args)
         {
 
-            WithrawRequest();
-            DepositRequest();
+            ChooseMethod();  
            
         }
 
         static public decimal ViewBalance(decimal balance)
         {
+            Console.WriteLine($"Available Balance: ${balance}");
             return balance;
         }
 
@@ -59,6 +59,7 @@ namespace Lab
                 balance = balance + depositAmount;
                 Console.WriteLine($"Deposit Amount: ${depositAmount} ");
                 Console.WriteLine($"New Balance: ${balance}");
+                Balance = balance;
                 return balance;
             }
             else
@@ -84,6 +85,38 @@ namespace Lab
             string input = Console.ReadLine();
             decimal deposit = Convert.ToDecimal(input);
             return Deposit(Balance, deposit);
+        }
+        static public void ChooseMethod()
+        {
+            int run = 0;
+            while (run == 0)
+            {
+                Console.WriteLine("Choose an option.");
+                Console.WriteLine("-Withdraw");
+                Console.WriteLine("-Deposit");
+                Console.WriteLine("-Check Balance");
+                string input = Console.ReadLine().ToLower();
+                if (input == "withdraw" || input == "1")
+                {
+                    WithrawRequest();
+                    continue;
+                }
+                if (input == "deposit" || input == "2")
+                {
+                    DepositRequest();
+                    continue;
+                }
+                if (input == "check balance" || input == "3")
+                {
+                    ViewBalance(Balance);
+                    continue;
+                }
+                if (input == "")
+                {
+                    break;
+                }
+            }
+
         }
         static public bool NotNegative(decimal value)
         {
