@@ -1,5 +1,5 @@
 # Lab02
-![Screenshot](Assets/Screenshot.png)
+![.NET Core](https://github.com/ArikMackenburg/Lab02/workflows/.NET%20Core/badge.svg)
 ## The Problem Domain
 + Create a bank “ATM” program within a console application
 ### Program Specifications
@@ -40,3 +40,5 @@ Using Test Driven Development, build out a console application that mocks the fu
   + Test every method/action (that does not require user input); there should be a passing valid input, and a passing invalid input.
   + Have at least 2 tests for every non-void method.
   + A failing test, is not a valid test - even if the failure is expected.
+
+  ![Screenshot](Assets/Screenshot.png)
